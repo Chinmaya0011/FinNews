@@ -1,0 +1,217 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a basic style to the header */
+#main-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column; /* Updated to vertical column layout */
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the FinNews logo */
+#logo-container h1 {
+    font-size: 24px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px; /* Added margin to create space between logo and nav */
+}
+
+/* Style the navigation menu */
+#nav-container {
+    display: flex;
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allow navigation items to wrap on smaller screens */
+}
+
+#main-nav li {
+    margin-right: 20px;
+    margin-bottom: 10px; /* Add margin between navigation items */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Add colorful shadow on hover */
+#main-nav li:hover {
+    text-decoration: underline;
+    background-color: #55acee; /* Change to your desired hover background color */
+    box-shadow: 0px 0px 10px 2px #55acee, 0px 0px 10px 4px #ffcc29; /* Adjust colors as needed */
+}
+
+/* Additional hover animation */
+#main-nav li:hover::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #55acee, #ffcc29); /* Adjust colors as needed */
+    animation: stretch 0.3s ease-in-out;
+}
+
+@keyframes stretch {
+    0%, 100% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+}
+
+/* Add styling for the search bar and button */
+#search-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow search bar and button to wrap on smaller screens */
+    align-items: center;
+    margin-left: auto; /* Push the search bar and button to the right */
+}
+
+#search-bar {
+    padding: 6px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%; /* Make the search bar full width on smaller screens */
+}
+
+#search-button {
+    padding: 6px 10px;
+    background-color: #55acee; /* Adjust as needed */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add space between search bar and button on smaller screens */
+}
+
+#search-button:hover {
+    background-color: #007bb5; /* Adjust as needed */
+}
+
+#articles-container {
+    width: 100%;
+}
+
+.article {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.articleContainer {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 100%; /* Make articles full width on smaller screens */
+    box-sizing: border-box;
+}
+
+.articleImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.articleTitle {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.articleDescription {
+    margin-bottom: 10px;
+}
+
+.articleAuthor {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.articlePublished {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.readMoreButton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.readMoreButton:hover {
+    background-color: #2980b9;
+}
+
+/* Media queries for mobile devices */
+@media screen and (max-width: 600px) {
+    #main-nav li {
+        margin-right: 10px; /* Adjust margin for smaller screens */
+    }
+
+    #search-bar {
+        width: 70%; /* Adjust width for smaller screens */
+    }
+
+    #search-button {
+        width: 30%; /* Adjust width for smaller screens */
+        margin-top: 7px; /* Remove margin between search bar and button on smaller screens */
+    }
+
+    .articleContainer {
+        width: 100%; /* Make articles full width on smaller screens */
+    }
+}
+/* Media queries for tablet devices */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    #main-nav li {
+        margin-right: 15px; /* Adjust margin for tablets */
+    }
+
+    #search-bar {
+        width: 50%; /* Adjust width for tablets */
+    }
+
+    #search-button {
+        width: 50%; /* Adjust width for tablets */
+        margin-top: 0; /* Remove margin between search bar and button on tablets */
+    }
+
+    .articleContainer {
+        width: 48%; /* Adjust width for tablets */
+    }
+}
+
+/* Media queries for laptops and desktops */
+@media screen and (min-width: 1025px) {
+    #main-nav li {
+        margin-right: 20px; /* Reset margin for laptops and desktops */
+    }
+
+    #search-bar {
+        width: auto; /* Reset width for laptops and desktops */
+    }
+
+    #search-button {
+        width: auto; /* Reset width for laptops and desktops */
+        margin-top: 0; /* Remove margin between search bar and button on laptops and desktops */
+    }
+
+    .articleContainer {
+        width: 48%; /* Reset width for laptops and desktops */
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinNews</title>
+  <link rel="stylesheet" href="news.css">
+</head>
+<body>
+  <header id="main-header">
+    <div id="logo-container">
+        <h1 onclick="fetchNews('sri-ram')">FinNews</h1>
+    </div>
+    <div id="nav-container">
+        <nav id="main-nav">
+            <ul>
+                <li onclick="fetchNews('odisha')">State</li>
+                <li onclick="fetchNews('india')">National</li>
+                <li onclick="fetchNews('technology')">Tech</li>
+                <li onclick="fetchNews('geopolitics')">Geo-Politics</li>
+            </ul>
+        </nav>
+        <div id="search-container">
+            <input type="text" id="search-bar" placeholder="Search...">
+            <button id="search-button" onclick="searchInput()">Search</button>
+        </div>
+    </div>
+  </header>
+<main>
+  <div id="articles-container">
+
+  </div>
+</main>
+  <footer></footer>
+
+  <script src="news.js"></script>
+</body>
+</html>
