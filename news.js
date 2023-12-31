@@ -7,9 +7,9 @@ function fetchNewsByQuery(query) {
             // Clear existing articles
             const articlesContainer = document.getElementById("articles-container");
             articlesContainer.innerHTML = '';
-
+            const limitedArticles = data.articles.slice(0, 25);
             // Append new articles
-            data.articles.forEach(article => {
+            limitedArticles.forEach(article => {
                 articlesContainer.innerHTML += `
                 <div class="article">
                     <div class="articleContainer">
